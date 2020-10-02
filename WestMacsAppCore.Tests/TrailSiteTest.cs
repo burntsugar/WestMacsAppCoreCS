@@ -1,8 +1,8 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:59 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:59 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 08:22:04
  */
 using NUnit.Framework;
 
@@ -10,6 +10,7 @@ namespace WestMacsAppCore.Tests
 {
     public class TailSiteTest
     {
+        private static int NUM_OF_TRAILSITES_WITH_WATER_SOURCE = 1;
         private static int NUM_OF_TRAILSITES_WITH_WATER_TANK = 1;
         private static int DISTANCE_1 = 140;
         private static string[] TRAILSITE_NAMES_NEAR_DISTANCE_1 = { "Serpentine Gorge Car Park" };
@@ -20,6 +21,20 @@ namespace WestMacsAppCore.Tests
         {
             Model model = DataUtils.ReadDataFile();
             controller = new Controller(model);
+        }
+
+        [Test]
+        public void Get_All_TrailSite_Instances_With_Water_Source_Return_All_TrailSite_Instances_With_Water_Source()
+        {
+            int expected = NUM_OF_TRAILSITES_WITH_WATER_SOURCE;
+            var returned = controller.GetTrailSitesWithWaterSource();
+            Assert.IsNotEmpty(returned);
+            returned.ForEach((p) =>
+            {
+                Assert.That(p, Is.TypeOf(typeof(TrailSite)));
+            });
+            Assert.IsNotEmpty(returned);
+            Assert.AreEqual(expected, returned.Count);
         }
 
         [Test]
@@ -59,7 +74,7 @@ namespace WestMacsAppCore.Tests
         public void Get_All_TrailSite_Instances_With_Water_Tank_Return_All_TrailSite_Instances_With_Water_Tank()
         {
             int expected = NUM_OF_TRAILSITES_WITH_WATER_TANK;
-            var returned = controller.GetTrailSitesWithWater();
+            var returned = controller.GetTrailSitesWithTankWater();
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {

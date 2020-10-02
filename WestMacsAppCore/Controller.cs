@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:56 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 07:45:00
+ * @Last Modified time: 2020-10-03 08:27:58
  */
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,15 @@ public class Controller
     }
 
     // Place...
+
+    /// <summary>
+    /// Returns a list of Place instances which have any source of water.
+    /// </summary>
+    /// <returns>List of matching Place instances.</returns>
+    public List<Place> GetPlacesWithWaterSource()
+    {
+        return _model.GetPlaces(AppDelegates.placeHasWaterSource());
+    }
 
     /// <summary>
     /// Returns a Place instance for a given name.
@@ -64,6 +73,15 @@ public class Controller
     }
 
     /// <summary>
+    /// Gets the list of Place instances containing toilet facilities.
+    /// </summary>
+    /// <returns>List of matching Place instances.</returns>
+    public List<Place> GetPlacesWithToilet()
+    {
+        return _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TOILET));
+    }
+
+    /// <summary>
     /// Gets a list of Place instances having parking facilities.
     /// </summary>
     /// <returns>List of matching Place instances.</returns>
@@ -73,6 +91,15 @@ public class Controller
     }
 
     // CampSite...
+
+    /// <summary>
+    /// Returns a list of CampSite instances which have any source of water.
+    /// </summary>
+    /// <returns>List of matching Place instances.</returns>
+    public List<CampSite> GetCampSitesWithWaterSource()
+    {
+        return _model.GetCampSites(AppDelegates.placeHasWaterSource());
+    }
 
     /// <summary>
     /// Returns a CampSite instance for a given name.
@@ -152,6 +179,15 @@ public class Controller
     // TrailSites
 
     /// <summary>
+    /// Returns a list of TrailSite instances which have any source of water.
+    /// </summary>
+    /// <returns>List of matching TrailSite instances.</returns>
+    public List<TrailSite> GetTrailSitesWithWaterSource()
+    {
+        return _model.GetTrailSites(AppDelegates.placeHasWaterSource());
+    }
+
+    /// <summary>
     /// Returns a TrailSite instance for a given name.
     /// </summary>
     /// <param name="name">String: Name of TrailSite</param>
@@ -165,7 +201,7 @@ public class Controller
     /// Gets a list of TrailSite instances containing water tank facilities.
     /// </summary>
     /// <returns>List of matching TrailSite instances.</returns>
-    public List<TrailSite> GetTrailSitesWithWater()
+    public List<TrailSite> GetTrailSitesWithTankWater()
     {
         return _model.GetTrailSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TANK_WATER));
     }

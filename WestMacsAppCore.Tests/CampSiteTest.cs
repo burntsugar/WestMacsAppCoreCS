@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:53 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 07:31:08
+ * @Last Modified time: 2020-10-03 08:19:12
  */
 using NUnit.Framework;
 
@@ -11,7 +11,7 @@ namespace WestMacsAppCore.Tests
 
     public class CampSiteTest
     {
-
+        private static int NUM_OF_CAMPSITES_WITH_WATER_SOURCE = 14;
         private static int DISTANCE_1 = 106;
         private static string[] CAMPSITE_NAMES_NEAR_DISTANCE_1 = { "Ghost Gum Flat Campsite", "Rocky Gully Campsite" };
         private static int NUM_OF_CAMPSITES_WITH_WATER_TANK = 14;
@@ -21,15 +21,25 @@ namespace WestMacsAppCore.Tests
         private static int NUM_OF_CAMPSITES_WITH_TAP_WATER = 1;
         private static int NUM_OF_CAMPSITES_WITH_SHOWER = 2;
 
-
-
-
         private Controller controller;
         [SetUp]
         public void Setup()
         {
             Model model = DataUtils.ReadDataFile();
             controller = new Controller(model);
+        }
+
+        [Test]
+        public void Get_All_CampSite_Instances_With_Water_Source_Return_All_Campsite_Instances_With_Water_Source()
+        {
+            int expected = NUM_OF_CAMPSITES_WITH_WATER_SOURCE;
+            var returned = controller.GetCampSitesWithWaterSource();
+            Assert.IsNotEmpty(returned);
+            returned.ForEach((p) =>
+            {
+                Assert.That(p, Is.TypeOf(typeof(CampSite)));
+            });
+            Assert.AreEqual(expected, returned.Count);
         }
 
         [Test]

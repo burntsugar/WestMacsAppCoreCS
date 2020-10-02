@@ -1,8 +1,8 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:56 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:56 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 08:28:26
  */
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ namespace WestMacsAppCore.Tests
     public class PlaceTest
     {
 
+        private static int NUM_OF_PLACES_WITH_WATER_SOURCE = 15;
         private static int NUM_OF_PLACES_WITH_WATER_TANK = 15;
         private static int NUM_OF_PLACES_WITH_SHELTER = 9;
         private static int NUM_OF_PLACES_WITH_TOILET = 15;
@@ -25,6 +26,14 @@ namespace WestMacsAppCore.Tests
         {
             Model model = DataUtils.ReadDataFile();
             controller = new Controller(model);
+        }
+
+        [Test]
+        public void Get_Any_Place_Instance_With_Water_Source_Return_Any_Place_With_Water_Source()
+        {
+            List<Place> returned = controller.GetPlacesWithWaterSource();
+            Assert.IsNotEmpty(returned);
+            Assert.AreEqual(NUM_OF_PLACES_WITH_WATER_SOURCE,returned.Count);
         }
 
         [Test]
@@ -65,13 +74,17 @@ namespace WestMacsAppCore.Tests
         [Test]
         public void Get_Any_Place_Instances_With_Shelter_Return_Place_Instances_With_Shelter()
         {
-            var returned = controller.GetCampSitesWithShelter();
+            var returned = controller.GetPlacesWithShelter();
             Assert.IsNotEmpty(returned);
-            returned.ForEach((p) =>
-            {
-                Assert.That(p, Is.TypeOf(typeof(CampSite)));
-            });
             Assert.AreEqual(NUM_OF_PLACES_WITH_SHELTER, returned.Count);
+        }
+
+        [Test]
+        public void Get_Any_Place_Instances_With_Toilet_Return_Place_Instances_With_Toilet()
+        {
+            var returned = controller.GetPlacesWithToilet();
+            Assert.IsNotEmpty(returned);
+            Assert.AreEqual(NUM_OF_PLACES_WITH_TOILET, returned.Count);
         }
 
         [Test]
