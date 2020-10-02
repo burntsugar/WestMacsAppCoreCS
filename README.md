@@ -12,6 +12,18 @@
 
 `dotnet test`
 
+## ⛺ Repo structure
+
+````
+WestMacsApp
+ |
+ --- WestMacsApp.sln
+ |
+ +-- WestMacsAppCore/
+ |
+ +-- WestMacsApp.Test/
+ ````
+
 <br>
 
 <hr>
