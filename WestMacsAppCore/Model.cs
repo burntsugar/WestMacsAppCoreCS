@@ -1,19 +1,17 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:06 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:06 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 07:19:18
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System;
 
-
 public class Model
 {
 
     private List<TrailSite> _trailSites;
-
     private List<CampSite> _campsites;
 
     [JsonPropertyName("campsites")]
@@ -25,6 +23,8 @@ public class Model
     {
         return $"Model >> Campsites: {_campsites.Count}, TrailSite: {_trailSites.Count}";
     }
+
+    // Place...
 
     public Place GetPlace(Predicate<Place> del)
     {
@@ -42,6 +42,8 @@ public class Model
         return places;
     }
 
+    // CampSite...
+
     public CampSite GetCampSite(Predicate<CampSite> del)
     {
         return _campsites.Find(del);
@@ -51,8 +53,6 @@ public class Model
     {
         return _campsites.FindAll(del);
     }
-
-
 
     // TrailSite
 

@@ -1,8 +1,8 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:53 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:53 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 07:31:08
  */
 using NUnit.Framework;
 
@@ -17,6 +17,12 @@ namespace WestMacsAppCore.Tests
         private static int NUM_OF_CAMPSITES_WITH_WATER_TANK = 14;
         private static int NUM_OF_CAMPSITES_WITH_SHELTER = 9;
         private static int NUM_OF_CAMPSITES_WITH_TOILET = 14;
+        private static int NUM_OF_CAMPSITES_WITH_USB_CHARGING = 6;
+        private static int NUM_OF_CAMPSITES_WITH_TAP_WATER = 1;
+        private static int NUM_OF_CAMPSITES_WITH_SHOWER = 2;
+
+
+
 
         private Controller controller;
         [SetUp]
@@ -92,6 +98,42 @@ namespace WestMacsAppCore.Tests
                 Assert.That(p, Is.TypeOf(typeof(CampSite)));
             });
             Assert.AreEqual(NUM_OF_CAMPSITES_WITH_TOILET, returned.Count);
+        }
+
+        [Test]
+        public void Get_CampSite_Instances_With_USB_Charging_Return_CampSite_Instances_With_USB_Charging()
+        {
+            var returned = controller.GetCampSitesWithUSBCharging();
+            Assert.IsNotEmpty(returned);
+            returned.ForEach((p) =>
+            {
+                Assert.That(p, Is.TypeOf(typeof(CampSite)));
+            });
+            Assert.AreEqual(NUM_OF_CAMPSITES_WITH_USB_CHARGING, returned.Count);
+        }
+
+        [Test]
+        public void Get_CampSite_Instances_With_Tap_Water_Return_CampSite_Instances_With_Tap_Water()
+        {
+            var returned = controller.GetCampSitesWithTapWater();
+            Assert.IsNotEmpty(returned);
+            returned.ForEach((p) =>
+            {
+                Assert.That(p, Is.TypeOf(typeof(CampSite)));
+            });
+            Assert.AreEqual(NUM_OF_CAMPSITES_WITH_TAP_WATER, returned.Count);
+        }
+
+        [Test]
+        public void Get_CampSite_Instances_With_Shower_Return_CampSite_Instances_With_Shower()
+        {
+            var returned = controller.GetCampSitesWithShower();
+            Assert.IsNotEmpty(returned);
+            returned.ForEach((p) =>
+            {
+                Assert.That(p, Is.TypeOf(typeof(CampSite)));
+            });
+            Assert.AreEqual(NUM_OF_CAMPSITES_WITH_SHOWER, returned.Count);
         }
 
     }
