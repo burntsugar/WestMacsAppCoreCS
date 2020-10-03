@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:06 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 11:25:53
+ * @Last Modified time: 2020-10-03 16:27:57
  */
 using System;
 
@@ -50,11 +50,6 @@ public class AppDelegates
     {
         return (Facility f) => f.Name.Equals(facilityName);
     }
-
-    // public static Predicate<Place> placeFacilities(string placeName, string facilityName)
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(facilityName));
-    // }
 
     /// <summary>
     /// Place has a source of water.
