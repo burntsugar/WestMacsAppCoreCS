@@ -2,13 +2,13 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:45 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 15:05:18
+ * @Last Modified time: 2020-10-03 16:33:11
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 /// <summary>
-/// Defines state and behaviour for a campsite along the trail.
+/// Defines state and behaviour for a CampSite along the trail.
 /// </summary>
 public class CampSite : Place
 {
@@ -63,16 +63,30 @@ public class CampSite : Place
     [JsonPropertyName("section")]
     public int Section { get => section; set => section = value; }
 
+    /// <summary>
+    /// Implementation of ToString().
+    /// </summary>
+    /// <returns>string</returns>
     public override string ToString()
     {
         return $"{DistanceKmFromEast}: CampSite: {Name} {Description}";
     }
+
+    /// <summary>
+    /// Implementation of IComparable interface is based upon distance from the trail start to the east.
+    /// </summary>
+    /// <param name="other">Place: Other place in the comparison.</param>
+    /// <returns>int: representing lesser, equal or greater.</returns>
     public int CompareTo(Place other) 
     {
         double diff = DistanceKmFromEast - other.DistanceKmFromEast;
         return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
     }
 
+    /// <summary>
+    /// Implementation of IClonable interface.
+    /// </summary>
+    /// <returns>CampSite: A complete deep copy of the current instance state.</returns>
     public object Clone()
     {
         return new CampSite
