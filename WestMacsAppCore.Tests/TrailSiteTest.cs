@@ -57,7 +57,7 @@ namespace WestMacsAppCore.Tests
         [Test]
         public void Get_TrailSite_Instances_By_Distance_East_Return_TrailSite_Instances_By_Distance_East()
         {
-            var returned = controller.GetTrailSitesByDistanceEast(DISTANCE_1);
+            var returned = controller.GetTrailSitesAtDistanceEast(DISTANCE_1);
             Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
