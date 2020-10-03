@@ -10,7 +10,6 @@ using System;
 
 public class Model
 {
-
     private List<TrailSite> _trailSites;
     private List<CampSite> _campsites;
 

@@ -20,11 +20,8 @@ namespace WestMacsAppCore.Tests
         private static int NUM_OF_PLACES_WITH_PARKING = 1;
         private static int DISTANCE_1 = 106;
         private static string[] PLACE_NAMES_NEAR_DISTANCE_1 = { "Ghost Gum Flat Campsite", "Rocky Gully Campsite" };
-
         private static string OBSERVATION_AUTHOR_1 = "rrr@burntsugar.rocks";
-
-                private static int NUM_OF_OBSERVATIONS_1 = 2;
-
+        private static int NUM_OF_OBSERVATIONS_1 = 2;
 
         private Controller controller;
         [SetUp]
@@ -35,25 +32,26 @@ namespace WestMacsAppCore.Tests
         }
 
         [Test]
-        public void Get_All_Places_Return_All_Places(){
+        public void Get_All_Places_Return_All_Places()
+        {
             List<Place> allPlaces = controller.GetAllPlaces();
             Assert.IsNotNull(allPlaces);
             Assert.IsNotEmpty(allPlaces);
-            Assert.AreEqual(NUM_OF_PLACES,allPlaces.Count);
+            Assert.AreEqual(NUM_OF_PLACES, allPlaces.Count);
         }
 
         [Test]
         public void Get_Any_Place_Facility_Observations_Return_Any_Place_Facility_Observations()
         {
-            List<Observation> returned = controller.GetPlaceFacilityObservations("Wallaby Gap Campsite","Toilet");
+            List<Observation> returned = controller.GetPlaceFacilityObservations("Wallaby Gap Campsite", "Toilet");
             Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             string expectedAuthor = OBSERVATION_AUTHOR_1;
             string actualAuthor = returned[0].AuthorName;
-            Assert.AreEqual(expectedAuthor,actualAuthor);
+            Assert.AreEqual(expectedAuthor, actualAuthor);
             int expectedCount = NUM_OF_OBSERVATIONS_1;
             int actualCount = returned.Count;
-            Assert.AreEqual(expectedCount,actualCount);
+            Assert.AreEqual(expectedCount, actualCount);
         }
 
         [Test]

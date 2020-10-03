@@ -47,7 +47,7 @@ public class TrailSite : Place
 
     [JsonPropertyName("is_trail_head")]
     public bool IsTrailHead { get => _isTrailHead; set => _isTrailHead = value; }
-    
+
     [JsonPropertyName("section")]
     public int Section { get => section; set => section = value; }
 }
