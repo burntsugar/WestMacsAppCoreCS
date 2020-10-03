@@ -1,8 +1,8 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:45 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:37:45 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 12:29:07
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -62,4 +62,15 @@ public class CampSite : Place
     /// <value>Get or set the section number that this campsite belongs to.</value>
     [JsonPropertyName("section")]
     public int Section { get => section; set => section = value; }
+
+    public override string ToString()
+    {
+        return $"{DistanceKmFromEast}: CampSite: {Name} {Description}";
+    }
+    public int CompareTo(Place other) 
+    {
+        double diff = DistanceKmFromEast - other.DistanceKmFromEast;
+        return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
+    }
+
 }

@@ -1,8 +1,8 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:31 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:31 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 13:28:31
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -50,4 +50,14 @@ public class TrailSite : Place
 
     [JsonPropertyName("section")]
     public int Section { get => section; set => section = value; }
+
+        public override string ToString()
+    {
+        return $"{DistanceKmFromEast}: TrailSite: {Name} {Description}";
+    }
+    public int CompareTo(Place other) 
+    {
+        double diff = DistanceKmFromEast - other.DistanceKmFromEast;
+        return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
+    }
 }

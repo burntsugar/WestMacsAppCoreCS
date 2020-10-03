@@ -100,7 +100,7 @@ namespace WestMacsAppCore.Tests
         [Test]
         public void Get_Any_Place_Instance_Types_By_Distance_East_Return_Any_Place_Instances_By_Distance()
         {
-            List<Place> actual = controller.GetPlacesByDistanceEast(DISTANCE_1);
+            List<Place> actual = controller.GetPlacesAtDistanceEast(DISTANCE_1);
             Assert.IsNotNull(actual);
             Assert.IsNotEmpty(actual);
             Assert.AreEqual(PLACE_NAMES_NEAR_DISTANCE_1.Length, actual.Count);

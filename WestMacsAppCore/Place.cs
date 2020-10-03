@@ -1,13 +1,15 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:19 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:19 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-03 12:37:38
  */
 using System.Collections.Generic;
+using System;
 
-public interface Place
+public interface Place : IComparable<Place>
 {
+
     string Name
     {
         get;
@@ -50,4 +52,5 @@ public interface Place
         get;
         set;
     }
+
 }
