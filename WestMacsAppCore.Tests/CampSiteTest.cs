@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:53 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:19:12
+ * @Last Modified time: 2020-10-03 10:37:13
  */
 using NUnit.Framework;
 
@@ -34,6 +34,7 @@ namespace WestMacsAppCore.Tests
         {
             int expected = NUM_OF_CAMPSITES_WITH_WATER_SOURCE;
             var returned = controller.GetCampSitesWithWaterSource();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -64,6 +65,7 @@ namespace WestMacsAppCore.Tests
         {
             int expected = NUM_OF_CAMPSITES_WITH_WATER_TANK;
             var returned = controller.GetCampSitesWithTankWater();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -76,6 +78,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instance_Types_By_Distance_East_Return_CampSite_Instances_By_Distance()
         {
             var returned = controller.GetCampSitesByDistanceEast(DISTANCE_1);
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -90,6 +93,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instances_With_Shelter_Return_CampSite_Instances_With_Shelter()
         {
             var returned = controller.GetCampSitesWithShelter();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -102,6 +106,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instances_With_Toilet_Return_CampSite_Instances_With_Toilet()
         {
             var returned = controller.GetCampSitesWithToilet();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -114,6 +119,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instances_With_USB_Charging_Return_CampSite_Instances_With_USB_Charging()
         {
             var returned = controller.GetCampSitesWithUSBCharging();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -126,6 +132,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instances_With_Tap_Water_Return_CampSite_Instances_With_Tap_Water()
         {
             var returned = controller.GetCampSitesWithTapWater();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -138,6 +145,7 @@ namespace WestMacsAppCore.Tests
         public void Get_CampSite_Instances_With_Shower_Return_CampSite_Instances_With_Shower()
         {
             var returned = controller.GetCampSitesWithShower();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {

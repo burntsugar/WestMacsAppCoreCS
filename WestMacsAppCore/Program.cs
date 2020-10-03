@@ -2,9 +2,10 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:26 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:45:07
+ * @Last Modified time: 2020-10-03 09:25:30
  */
 using System;
+using System.Collections.Generic;
 
 namespace custom2
 {
@@ -15,6 +16,20 @@ namespace custom2
             try {
             Model model = DataUtils.ReadDataFile();
             Controller controller = new Controller(model);
+
+            // List<Place> returned = controller.GetAllPlaces();
+            // Console.WriteLine(returned[0].Name);
+
+            Place p = controller.GetPlaceByName("Telegraph Station");
+            Console.WriteLine(p.GetType());
+
+            Console.WriteLine(p.Name);
+            Console.WriteLine(p.Facilities[0].Name);
+            
+            Console.WriteLine(p.Observations.Count);
+
+            //Console.WriteLine(p.Observations[0].AuthorName);
+
             } catch (Exception exception) {
                 Console.WriteLine("STOP HAMMER TIME " + exception.Message);
             }

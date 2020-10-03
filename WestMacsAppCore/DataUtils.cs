@@ -2,11 +2,13 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:38:46 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:45:53
+ * @Last Modified time: 2020-10-03 08:47:18
  */
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
+
+// TODO: persist
 
 /// <summary>
 /// Utility for reading app data from .json and persisting app data to .json.

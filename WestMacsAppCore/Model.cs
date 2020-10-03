@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:06 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 07:19:18
+ * @Last Modified time: 2020-10-03 08:58:16
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -16,6 +16,7 @@ public class Model
 
     [JsonPropertyName("campsites")]
     public List<CampSite> Campsites { get => _campsites; set => _campsites = value; }
+
     [JsonPropertyName("trailsites")]
     public List<TrailSite> TrailSites { get => _trailSites; set => _trailSites = value; }
 
@@ -39,6 +40,14 @@ public class Model
         List<Place> places = new List<Place>();
         places.AddRange(_campsites.FindAll(del));
         places.AddRange(_trailSites.FindAll(del));
+        return places;
+    }
+
+    public List<Place> GetPlaces()
+    {
+        List<Place> places = new List<Place>();
+        places.AddRange(_campsites);
+        places.AddRange(_trailSites);
         return places;
     }
 

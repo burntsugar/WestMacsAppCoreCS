@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:59 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:22:04
+ * @Last Modified time: 2020-10-03 10:38:12
  */
 using NUnit.Framework;
 
@@ -28,6 +28,7 @@ namespace WestMacsAppCore.Tests
         {
             int expected = NUM_OF_TRAILSITES_WITH_WATER_SOURCE;
             var returned = controller.GetTrailSitesWithWaterSource();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -57,6 +58,7 @@ namespace WestMacsAppCore.Tests
         public void Get_TrailSite_Instances_By_Distance_East_Return_TrailSite_Instances_By_Distance_East()
         {
             var returned = controller.GetTrailSitesByDistanceEast(DISTANCE_1);
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {
@@ -75,6 +77,7 @@ namespace WestMacsAppCore.Tests
         {
             int expected = NUM_OF_TRAILSITES_WITH_WATER_TANK;
             var returned = controller.GetTrailSitesWithTankWater();
+            Assert.IsNotNull(returned);
             Assert.IsNotEmpty(returned);
             returned.ForEach((p) =>
             {

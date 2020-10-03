@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:56 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:27:58
+ * @Last Modified time: 2020-10-03 11:20:51
  */
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,36 @@ public class Controller
     }
 
     // Place...
+
+    /// <summary>
+    /// Returns a list of Place instances which have any source of water.
+    /// </summary>
+    /// <returns>List of matching Place instances.</returns>
+    public List<Place> GetAllPlaces()
+    {
+        return _model.GetPlaces();
+    }
+    
+    /// <summary>
+    /// Returns a list of Facility Observation instances which belong to the given named place.
+    /// </summary>
+    /// <returns>List of matching Observation instances.</returns>
+    public List<Observation> GetPlaceFacilityObservations(string placeName, string facilityName)
+    {
+        Facility returned = _model.GetPlace(AppDelegates.placeHasName(placeName)).Facilities.Find(AppDelegates.FacilityHasEntry(facilityName));
+        return returned.Observations;
+    }
+
+    /// <summary>
+    /// Returns a list of Observation instances which belong to the given named place.
+    /// </summary>
+    /// <returns>List of matching Observation instances.</returns>
+    public List<Observation> GetPlaceObservations(string placeName)
+    {
+        Place p = _model.GetPlace(AppDelegates.placeHasName(placeName));
+        if (p is null) return null;
+        return p.Observations;
+    }
 
     /// <summary>
     /// Returns a list of Place instances which have any source of water.
@@ -174,7 +204,7 @@ public class Controller
     {
         return _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHOWER));
     }
-    
+
 
     // TrailSites
 
@@ -372,7 +402,7 @@ public class Controller
 //     {
 //         return _model.GetCampSites(AppDelegates.placeHasShower());
 //     }
-    
+
 
 //     // TrailSites
 

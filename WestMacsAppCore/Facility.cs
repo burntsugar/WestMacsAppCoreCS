@@ -25,8 +25,10 @@ public class Facility
 
     [JsonPropertyName("facility_name")]
     public string Name { get => _name; set => _name = value; }
+    
     [JsonPropertyName("facility-description")]
     public string Description { get => _description; set => _description = value; }
+
     [JsonPropertyName("facility-observations")]
     public List<Observation> Observations { get => _observations; set => _observations = value; }
 }

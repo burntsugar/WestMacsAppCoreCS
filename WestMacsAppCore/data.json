@@ -6,10 +6,16 @@
             "name": "Telegraph Station",
             "distance_km_from_east": 0,
             "other_names": [],
-            "description": "...Telegraph Station...",
-            "coords": [],
-            "elevation": 0,
-            "observations:": [],
+            "description": "The official eastern start point for the Larapinta Trail is on the grounds of the historic Telegraph Station.",
+            "coords": [-23.67084996,133.88502742],
+            "elevation": 592,
+            "observations": [
+                {
+                    "author_name":"rrr@burntsugar.rocks",
+                    "note": "We had trouble finding the trailhead - ended up walking around in circles for a while before commencing our 230KM trek!",
+                    "log_date": "2019-07-11T07:00:00"
+                }
+            ],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -29,10 +35,16 @@
             "name": "Serpentine Gorge Car Park",
             "distance_km_from_east": 139.3,
             "other_names": [],
-            "description": "...Serpentine Gorge Car Park is less than a KM south from Serpentine Gorge Campsite...",
-            "coords": [],
-            "elevation": 0,
-            "observations:": [],
+            "description": "Serpentine Gorge Car Park is less than a KM south from Serpentine Gorge Campsite. Very bumpy 4WD track connects the carpark to Namatjira Drive",
+            "coords": [-23.7593162,132.9794325],
+            "elevation": 733,
+            "observations": [
+                {
+                    "author_name":"rrr@burntsugar.rocks",
+                    "note": "Very busy, many tour groups visiting the gorge.",
+                    "log_date": "2019-07-20T07:30:00"
+                }
+            ],
             "facilities": [
                 {
                     "facility_name": "Parking Area",
@@ -55,7 +67,13 @@
                 133.79529
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [
+                {
+                    "author_name":"rrr@burntsugar.rocks",
+                    "note": "Easy night with a few dingos closeby. The log book indicated there had been a lot of dingo activity recently.",
+                    "log_date": "2019-07-20T17:30:00"
+                }
+        ],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -65,7 +83,18 @@
                 {
                     "facility_name": "Toilet",
                     "facility_description": "Toilet available.",
-                    "facility-observations": []
+                    "facility-observations": [
+                        {
+                            "author_name":"rrr@burntsugar.rocks",
+                            "note": "There was even a fresh stock of toilet paper!.",
+                            "log_date": "2019-07-20T17:30:00"
+                        },
+                        {
+                            "author_name":"rrr@burntsugar.rocks",
+                            "note": "Don't look down with your headlamp on!.",
+                            "log_date": "2019-07-20T20:30:00"
+                        }
+                    ]
                 },
                 {
                     "facility_name": "Shelter",
@@ -91,7 +120,7 @@
                 133.717604
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -122,7 +151,7 @@
                 133.61289
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -145,7 +174,7 @@
             "description": "...Jay Creek...",
             "coords": [],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -181,7 +210,7 @@
                 133.49314
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -196,7 +225,7 @@
                 133.46922
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tap water",
@@ -237,7 +266,7 @@
                 133.39205
             ],
             "elevation": 1197,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -252,7 +281,7 @@
                 133.3771
             ],
             "elevation": 712,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -267,7 +296,7 @@
                 133.347333
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -303,7 +332,7 @@
                 133.30042
             ],
             "elevation": 793,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -318,7 +347,7 @@
                 133.259303
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -354,7 +383,7 @@
                 133.2404
             ],
             "elevation": 753,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -369,7 +398,7 @@
                 133.16809
             ],
             "elevation": 757,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -395,7 +424,7 @@
                 133.073059
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -421,7 +450,7 @@
                 132.978983
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -457,7 +486,7 @@
                 132.909986
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -493,7 +522,7 @@
                 132.82523
             ],
             "elevation": 866,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -508,7 +537,7 @@
                 132.726588
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -544,7 +573,7 @@
                 132.678387
             ],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -556,7 +585,7 @@
             "description": "A few tent pads around a semi-permanent waterhole.",
             "coords": [],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -568,7 +597,7 @@
             "description": "Camp high with views across to Mt. Sonder.",
             "coords": [],
             "elevation": 1010,
-            "observations:": [],
+            "observations": [],
             "facilities": []
         },
         {
@@ -580,7 +609,7 @@
             "description": "...Rocky Bar Gap...",
             "coords": [],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",
@@ -603,7 +632,7 @@
             "description": "...Redbank Gorge Campsite...",
             "coords": [],
             "elevation": 0,
-            "observations:": [],
+            "observations": [],
             "facilities": [
                 {
                     "facility_name": "Tank water",

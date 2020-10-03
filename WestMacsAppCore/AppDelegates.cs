@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:06 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 08:02:04
+ * @Last Modified time: 2020-10-03 11:25:53
  */
 using System;
 
@@ -42,76 +42,27 @@ public class AppDelegates
     }
 
     /// <summary>
+    /// Facility has an entry of the given name.
+    /// </summary>
+    /// <param name="facilityName"></param>
+    /// <returns>True if the Facility has the given entry name.</returns>
+    public static Predicate<Facility> FacilityHasEntry(string facilityName)
+    {
+        return (Facility f) => f.Name.Equals(facilityName);
+    }
+
+    // public static Predicate<Place> placeFacilities(string placeName, string facilityName)
+    // {
+    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(facilityName));
+    // }
+
+    /// <summary>
     /// Place has a source of water.
     /// </summary>
     /// <returns>True if the place has a source of water.</returns>
     public static Predicate<Place> placeHasWaterSource()
     {
-        return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TANK_WATER)| f.Name.Equals(Facility.FACILITY_NAME_TAP_WATER));
+        return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TANK_WATER) | f.Name.Equals(Facility.FACILITY_NAME_TAP_WATER));
     }
 
 }
-
-
-///// <summary>
-    // /// Place has water.
-    // /// </summary>
-    // /// <returns>True, if a place in the comparison has water.</returns>
-    // public static Predicate<Place> placesHasTankWater()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TANK_WATER));
-    // }
-
-    // /// <summary>
-    // /// Place has shelter facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has shelter.</returns>
-    // public static Predicate<Place> placeHasShelter()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_SHELTER));
-    // }
-
-    // /// <summary>
-    // /// Place has toilet facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has toilet.</returns>
-    // public static Predicate<Place> placeHasToilet()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TOILET));
-    // }
-
-    // /// <summary>
-    // /// Place has parking area facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has parking area facilities.</returns>
-    // public static Predicate<Place> placeHasParking()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_PAPRKING));
-    // }
-
-    // /// <summary>
-    // /// Place has USB charging facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has USB charging facilities.</returns>
-    // public static Predicate<Place> placeHasUSBCharging()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_USB_CHARGER));
-    // }
-
-    // /// <summary>
-    // /// Place has tap water facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has tap water facilities.</returns>
-    // public static Predicate<Place> placeHasTapWater()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TAP_WATER));
-    // }
-
-    // /// <summary>
-    // /// Place has shower facilities.
-    // /// </summary>
-    // /// <returns>True if place in the comparison has shower facilities.</returns>
-    // public static Predicate<Place> placeHasShower()
-    // {
-    //     return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_SHOWER));
-    // }
