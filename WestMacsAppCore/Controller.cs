@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:56 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 14:15:14
+ * @Last Modified time: 2020-10-03 14:49:23
  */
 using System;
 using System.Collections.Generic;
@@ -120,7 +120,10 @@ public class Controller
     /// <returns>List of Place :List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithShelter()
     {
-        return _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHELTER));
+        List<Place> places = _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHELTER));
+        if (places is null) return null;
+        places.Sort();
+        return places;
     }
 
     /// <summary>

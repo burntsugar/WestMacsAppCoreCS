@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:45 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 12:29:07
+ * @Last Modified time: 2020-10-03 15:05:18
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -73,4 +73,20 @@ public class CampSite : Place
         return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
     }
 
+    public object Clone()
+    {
+        return new CampSite
+          {
+              Coords = this.Coords,
+              Description = this.Description,
+              DistanceKmFromEast = this.DistanceKmFromEast,
+              Elevation = this.Elevation,
+              Facilities = this.Facilities,
+              IsTrailHead = this.IsTrailHead,
+              Name = this.Name,
+              Observations = this.Observations,
+              OtherNames = this.OtherNames,
+              Section = this.Section
+          };
+    }
 }

@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:31 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 13:28:31
+ * @Last Modified time: 2020-10-03 15:27:04
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -59,5 +59,22 @@ public class TrailSite : Place
     {
         double diff = DistanceKmFromEast - other.DistanceKmFromEast;
         return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
+    }
+
+        public object Clone()
+    {
+        return new TrailSite
+          {
+              Coords = this.Coords,
+              Description = this.Description,
+              DistanceKmFromEast = this.DistanceKmFromEast,
+              Elevation = this.Elevation,
+              Facilities = this.Facilities,
+              IsTrailHead = this.IsTrailHead,
+              Name = this.Name,
+              Observations = this.Observations,
+              OtherNames = this.OtherNames,
+              Section = this.Section
+          };
     }
 }
