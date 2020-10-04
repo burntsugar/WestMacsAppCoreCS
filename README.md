@@ -42,6 +42,8 @@ This allows the **Model** to remain relatively uncluttered and flexible, whilst 
 
 The **AppDelegates** class is a repository for some pre-made predicates which are called at will by the Controller.
 
+![sequence-diagram](sequence-diagram.png)
+
 Additionally, the Controller exposes a method which allows the view to pass in a custom predicate - for cases where a specific and otherwise unavailable result set is required (see below).
 
 ## ⛺ Prerequisites
