@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System;
 
+/// <summary>
+/// Defines state and retrieval for the app's model.
+/// </summary>
 public class Model
 {
     private List<TrailSite> _trailSites;
@@ -23,7 +26,6 @@ public class Model
     {
         return $"Model >> Campsites: {_campsites.Count}, TrailSite: {_trailSites.Count}";
     }
-
     private List<Place> cloneList(List<Place> l)
     {
         var clone = new List<Place>();
@@ -33,13 +35,11 @@ public class Model
         });
         return clone;
     }
-
     private Place clonePlace(Place p)
     {
         Place clone = (Place)p.Clone();
         return clone;
     }
-
     private List<CampSite> cloneList(List<CampSite> l)
     {
         var clone = new List<CampSite>();
@@ -49,13 +49,11 @@ public class Model
         });
         return clone;
     }
-
     private CampSite cloneCampSite(CampSite p)
     {
         CampSite clone = (CampSite)p.Clone();
         return clone;
     }
-
     private List<TrailSite> cloneList(List<TrailSite> l)
     {
         var clone = new List<TrailSite>();
@@ -65,7 +63,6 @@ public class Model
         });
         return clone;
     }
-
     private TrailSite cloneTrailSite(TrailSite p)
     {
         TrailSite clone = (TrailSite)p.Clone();

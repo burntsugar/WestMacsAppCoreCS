@@ -2,10 +2,11 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:31 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 16:37:39
+ * @Last Modified time: 2020-10-04 11:14:24
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using System.Linq;
 
 /// <summary>
 /// Defines the state and behaviour for a TrailSite.
@@ -91,15 +92,15 @@ public class TrailSite : Place
     {
         return new TrailSite
         {
-            Coords = this.Coords,
+            Coords = Coords.ToArray(),
             Description = this.Description,
             DistanceKmFromEast = this.DistanceKmFromEast,
             Elevation = this.Elevation,
-            Facilities = this.Facilities,
+            Facilities = this.Facilities.Select(i => (Facility)i.Clone()).ToList(),
             IsTrailHead = this.IsTrailHead,
             Name = this.Name,
-            Observations = this.Observations,
-            OtherNames = this.OtherNames,
+            Observations = this.Observations.Select(i => (Observation)i.Clone()).ToList(),
+            OtherNames = this.OtherNames.Select(i => (string)i.Clone()).ToList(),
             Section = this.Section
         };
     }

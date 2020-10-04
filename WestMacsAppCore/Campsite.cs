@@ -2,10 +2,11 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:45 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 16:33:11
+ * @Last Modified time: 2020-10-04 11:14:39
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using System.Linq;
 
 /// <summary>
 /// Defines state and behaviour for a CampSite along the trail.
@@ -77,7 +78,7 @@ public class CampSite : Place
     /// </summary>
     /// <param name="other">Place: Other place in the comparison.</param>
     /// <returns>int: representing lesser, equal or greater.</returns>
-    public int CompareTo(Place other) 
+    public int CompareTo(Place other)
     {
         double diff = DistanceKmFromEast - other.DistanceKmFromEast;
         return diff > 0 ? 1 : diff == 0.0 ? 0 : -1;
@@ -90,17 +91,17 @@ public class CampSite : Place
     public object Clone()
     {
         return new CampSite
-          {
-              Coords = this.Coords,
-              Description = this.Description,
-              DistanceKmFromEast = this.DistanceKmFromEast,
-              Elevation = this.Elevation,
-              Facilities = this.Facilities,
-              IsTrailHead = this.IsTrailHead,
-              Name = this.Name,
-              Observations = this.Observations,
-              OtherNames = this.OtherNames,
-              Section = this.Section
-          };
+        {
+            Coords = Coords.ToArray(),
+            Description = this.Description,
+            DistanceKmFromEast = this.DistanceKmFromEast,
+            Elevation = this.Elevation,
+            Facilities = this.Facilities.Select(i => (Facility)i.Clone()).ToList(),
+            IsTrailHead = this.IsTrailHead,
+            Name = this.Name,
+            Observations = this.Observations.Select(i => (Observation)i.Clone()).ToList(),
+            OtherNames = this.OtherNames.Select(i => (string)i.Clone()).ToList(),
+            Section = this.Section
+        };
     }
 }

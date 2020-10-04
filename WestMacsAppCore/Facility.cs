@@ -2,11 +2,15 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:38:55 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 07:17:41
+ * @Last Modified time: 2020-10-04 11:16:10
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using System.Linq;
 
+/// <summary>
+/// Defines state and behaviour for a Facility.
+/// </summary>
 public class Facility
 {
     public static string FACILITY_NAME_TANK_WATER = "Tank water";
@@ -31,4 +35,12 @@ public class Facility
 
     [JsonPropertyName("facility-observations")]
     public List<Observation> Observations { get => _observations; set => _observations = value; }
+
+    public object Clone(){
+        return new Facility{
+            Name = this.Name,
+            Description = this.Description,
+            Observations = this.Observations.Select(i => (Observation)i.Clone()).ToList(),
+        };
+    }
 }
