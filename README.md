@@ -110,6 +110,9 @@ This build relies upon a .json data file which has been compiled from my initial
 ## ⛺ API documentation
 XML documentation is built with the project and I am hoping to implement [DocFX](https://dotnet.github.io/docfx/) once it becomes mature enough to manage with .NET Core on MacOS (currently problematic 👿).
 
+## ⛺ Where to next
+See the Issues log for a list of TODO.
+
 <br>
 
 <hr>
