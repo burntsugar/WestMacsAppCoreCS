@@ -59,7 +59,7 @@ public class Controller
     /// <returns>List of Observation: List of matching Observation instances.</returns>
     public List<Observation> GetPlaceFacilityObservations(string placeName, string facilityName)
     {
-        Facility returned = _model.GetPlace(AppDelegates.placeHasName(placeName)).Facilities.Find(AppDelegates.FacilityHasEntry(facilityName));
+        Facility returned = _model.GetPlace(AppDelegates.PlaceHasName(placeName)).Facilities.Find(AppDelegates.FacilityHasEntry(facilityName));
         return returned.Observations;
     }
 
@@ -70,7 +70,7 @@ public class Controller
     /// <returns>List of Observation: List of matching Place Observation instances.</returns>
     public List<Observation> GetPlaceObservations(string placeName)
     {
-        Place p = _model.GetPlace(AppDelegates.placeHasName(placeName));
+        Place p = _model.GetPlace(AppDelegates.PlaceHasName(placeName));
         if (p is null) return null;
         return p.Observations;
     }
@@ -81,7 +81,7 @@ public class Controller
     /// <returns>List of Place: List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithWaterSource()
     {
-        List<Place> places = _model.GetPlaces(AppDelegates.placeHasWaterSource());
+        List<Place> places = _model.GetPlaces(AppDelegates.PlaceHasWaterSource());
         if (places == null) return null;
         places.Sort();
         return places;
@@ -94,7 +94,7 @@ public class Controller
     /// <returns>Place: Instance implementing Place or null if not found.</returns>
     public Place GetPlaceByName(string name)
     {
-        return _model.GetPlace(AppDelegates.placeHasName(name));
+        return _model.GetPlace(AppDelegates.PlaceHasName(name));
     }
 
     /// <summary>
@@ -104,7 +104,7 @@ public class Controller
     /// <returns>List of Place: List of Place instances, or null if not found.</returns>
     public List<Place> GetPlacesAtDistanceEast(int distance)
     {
-        return _model.GetPlaces(AppDelegates.placesIsAtDistanceEast(distance));
+        return _model.GetPlaces(AppDelegates.PlacesIsAtDistanceEast(distance));
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ public class Controller
     /// <returns>List of Place: List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithTankWater()
     {
-        List<Place> places = _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TANK_WATER));
+        List<Place> places = _model.GetPlaces(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TANK_WATER));
         if (places is null) return null;
         places.Sort();
         return places;
@@ -125,7 +125,7 @@ public class Controller
     /// <returns>List of Place :List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithShelter()
     {
-        List<Place> places = _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHELTER));
+        List<Place> places = _model.GetPlaces(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_SHELTER));
         if (places is null) return null;
         places.Sort();
         return places;
@@ -137,7 +137,7 @@ public class Controller
     /// <returns>List of Place: List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithToilet()
     {
-        List<Place> places = _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TOILET));
+        List<Place> places = _model.GetPlaces(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TOILET));
         if (places is null) return null;
         places.Sort();
         return places;
@@ -149,7 +149,7 @@ public class Controller
     /// <returns>List of Place :List of matching Place instances, or null if none found.</returns>
     public List<Place> GetPlacesWithParking()
     {
-        List<Place> places = _model.GetPlaces(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_PAPRKING));
+        List<Place> places = _model.GetPlaces(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_PAPRKING));
         if (places is null) return null;
         places.Sort();
         return places;
@@ -163,7 +163,7 @@ public class Controller
     /// <returns>List of CampSite :List of matching CampSite instances, or null if none found.</returns>
     public List<CampSite> GetCampSitesWithWaterSource()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasWaterSource());
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasWaterSource());
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -176,7 +176,7 @@ public class Controller
     /// <returns>CampSite: Instance of CampSite or null if not found.</returns>
     public CampSite GetCampSiteByName(string name)
     {
-        return _model.GetCampSite(AppDelegates.placeHasName(name));
+        return _model.GetCampSite(AppDelegates.PlaceHasName(name));
     }
 
     /// <summary>
@@ -186,7 +186,7 @@ public class Controller
     /// <returns>List of CampSite :List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesByDistanceEast(int distance)
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placesIsAtDistanceEast(distance));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlacesIsAtDistanceEast(distance));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -198,7 +198,7 @@ public class Controller
     /// <returns>List of CampSite :List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithTankWater()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TANK_WATER));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TANK_WATER));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -210,7 +210,7 @@ public class Controller
     /// <returns>List of CampSite :List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithShelter()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHELTER));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_SHELTER));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -222,7 +222,7 @@ public class Controller
     /// <returns>List of CampSite: List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithToilet()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TOILET));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TOILET));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -234,7 +234,7 @@ public class Controller
     /// <returns>List of CampSite: List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithUSBCharging()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_USB_CHARGER));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_USB_CHARGER));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -246,7 +246,7 @@ public class Controller
     /// <returns>List of CampSite: List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithTapWater()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TAP_WATER));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TAP_WATER));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -258,7 +258,7 @@ public class Controller
     /// <returns>List of CampSite :List of matching CampSite instances, or null if none found.</returns>    
     public List<CampSite> GetCampSitesWithShower()
     {
-        List<CampSite> campSites = _model.GetCampSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_SHOWER));
+        List<CampSite> campSites = _model.GetCampSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_SHOWER));
         if (campSites is null) return null;
         campSites.Sort();
         return campSites;
@@ -273,7 +273,7 @@ public class Controller
     /// <returns>List of TrailSite: List of matching TrailSite instances, or null if none found.</returns>    
     public List<TrailSite> GetTrailSitesWithWaterSource()
     {
-        List<TrailSite> ts = _model.GetTrailSites(AppDelegates.placeHasWaterSource());
+        List<TrailSite> ts = _model.GetTrailSites(AppDelegates.PlaceHasWaterSource());
         if (ts is null) return null;
         ts.Sort();
         return ts;
@@ -286,7 +286,7 @@ public class Controller
     /// <returns>TrailSite: Instance of TrailSite or null if not found.</returns>
     public TrailSite GetTrailSiteByName(string name)
     {
-        return _model.GetTrailSite(AppDelegates.placeHasName(name));
+        return _model.GetTrailSite(AppDelegates.PlaceHasName(name));
     }
 
     /// <summary>
@@ -295,7 +295,7 @@ public class Controller
     /// <returns>List of TrailSite :List of matching TrailSite instances, or null if none found.</returns>    
     public List<TrailSite> GetTrailSitesWithTankWater()
     {
-        List<TrailSite> ts = _model.GetTrailSites(AppDelegates.placeHasFacility(Facility.FACILITY_NAME_TANK_WATER));
+        List<TrailSite> ts = _model.GetTrailSites(AppDelegates.PlaceHasFacility(Facility.FACILITY_NAME_TANK_WATER));
         if (ts is null) return null;
         ts.Sort();
         return ts;
@@ -307,7 +307,7 @@ public class Controller
     /// <returns>List of TrailSite :List of matching TrailSite instances, or null if none found.</returns>    
     public List<TrailSite> GetTrailSitesAtDistanceEast(int distance)
     {
-        return _model.GetTrailSites(AppDelegates.placesIsAtDistanceEast(distance));
+        return _model.GetTrailSites(AppDelegates.PlacesIsAtDistanceEast(distance));
     }
 
 }

@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:06 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 16:27:57
+ * @Last Modified time: 2020-10-04 16:49:02
  */
 using System;
 
@@ -16,7 +16,7 @@ public class AppDelegates
     /// </summary>
     /// <param name="name">Name to match</param>
     /// <returns>True if the name in the comparison matches the given name.</returns>
-    public static Predicate<Place> placeHasName(string name)
+    public static Predicate<Place> PlaceHasName(string name)
     {
         return (p) => p.Name.Equals(name);
     }
@@ -26,7 +26,7 @@ public class AppDelegates
     /// </summary>
     /// <param name="distance">Distance to match on.</param>
     /// <returns>True, if distance + offset matches in the comparison.</returns>
-    public static Predicate<Place> placesIsAtDistanceEast(int distance)
+    public static Predicate<Place> PlacesIsAtDistanceEast(int distance)
     {
         return (cs) => cs.DistanceKmFromEast > (distance - 5) && cs.DistanceKmFromEast < (distance + 5);
     }
@@ -36,7 +36,7 @@ public class AppDelegates
     /// </summary>
     /// <param name="facilityName"></param>
     /// <returns>True if the place has the given Facility name.</returns>
-    public static Predicate<Place> placeHasFacility(string facilityName)
+    public static Predicate<Place> PlaceHasFacility(string facilityName)
     {
         return (Place p) => p.Facilities.Exists(f => f.Name.Equals(facilityName));
     }
@@ -55,7 +55,7 @@ public class AppDelegates
     /// Place has a source of water.
     /// </summary>
     /// <returns>True if the place has a source of water.</returns>
-    public static Predicate<Place> placeHasWaterSource()
+    public static Predicate<Place> PlaceHasWaterSource()
     {
         return (Place p) => p.Facilities.Exists(f => f.Name.Equals(Facility.FACILITY_NAME_TANK_WATER) | f.Name.Equals(Facility.FACILITY_NAME_TAP_WATER));
     }
