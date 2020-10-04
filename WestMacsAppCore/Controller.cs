@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:37:56 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-04 12:32:28
+ * @Last Modified time: 2020-10-04 14:51:06
  */
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,10 @@ public class Controller
     public Controller(Model model)
     {
         _model = model;
+    }
+
+    public List<Place> customQuery(Predicate<Place> pr){
+        return _model.GetPlaces(pr);
     }
 
     // Place...

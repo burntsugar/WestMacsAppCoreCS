@@ -2,10 +2,11 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-04 10:47:09 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-04 10:49:32
+ * @Last Modified time: 2020-10-04 15:01:44
  */
 
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// Demonstration class which shows a select few methods for displaying data from the model.
@@ -37,6 +38,22 @@ public class DemoView
 
         printDemoHeadings("PLACES: SORTED: EAST TO WEST: WATER SOURCES: Showing a summary of all places (CampSite and TrailSite) in the model having a water source -  sorted by distance from the eastern starting point of the trail...");
         printAllWithAWaterSource();
+
+        printDemoHeadings("PLACES: SORTED: EAST TO WEST: CUSTOM QUERY: ANONYMOUS INLINE FUNCTION: Demo of submitting a custom predicate query to the model.");
+        printCustomQueryDemo();
+    }
+
+    private void printCustomQueryDemo()
+    {
+        Predicate<Place> q = ((p) =>
+        {
+            return p.Elevation > 1000;
+        });
+        List<Place> places = _controller.customQuery(q);
+        places.ForEach((p) =>
+        {
+            printDemoLines($"{p.Elevation} MTR: {p.ToString()}");
+        });
     }
 
     private void printAllWithAWaterSource()
