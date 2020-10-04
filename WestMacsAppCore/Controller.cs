@@ -306,10 +306,4 @@ public class Controller
         return _model.GetTrailSites(AppDelegates.placesIsAtDistanceEast(distance));
     }
 
-    // TODO: Remove...
-    private void printx(Place pl)
-    {
-        Console.WriteLine(pl.Name);
-    }
-
 }
