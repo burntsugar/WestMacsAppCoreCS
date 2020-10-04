@@ -36,6 +36,7 @@ The public interface of the Model allows the following `Predicate<T>` types to b
 - `Predicate<Place>`
 - `Predicate<CampSite>`
 - `Predicate<TrailSite>`
+- `Predicate<Facility>`
 
 This allows the **Model** to remain relatively uncluttered and flexible, whilst I work on the required functionality in the Controller.
 
