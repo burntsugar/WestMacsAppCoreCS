@@ -110,6 +110,8 @@ This build relies upon a .json data file which has been compiled from my initial
 ## ⛺ API documentation
 XML documentation is built with the project and I am hoping to implement [DocFX](https://dotnet.github.io/docfx/) once it becomes mature enough to manage with .NET Core on MacOS (currently problematic 👿).
 
+🤔 Maybe you know how to solve the problem? See my [stackoverflow question](https://stackoverflow.com/questions/64155015/error-extracting-metadata-in-docfx-project).
+
 ## ⛺ Where to next
 See the Issues log for a list of TODO.
 
