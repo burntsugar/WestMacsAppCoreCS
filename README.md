@@ -16,6 +16,8 @@ Water is the top priority for anyone venturing out to this trail:
 
 One of my main hopes for this app is to provide a way for hikers to report the current conditions along the trail - especially those which relate to surface water. These reports would allow hikers to plan their water accordingly, and potentially achieve pack-weight efficiences.
 
+🚀 So when my SIT771 studies asked for a rocket-powered OO app built in C# I chose to do this.
+
 ## ⛺ Current project goals
 
 - Consolidate my data and ideas for this app which have been distributed across multiple other platforms and databases.
