@@ -89,7 +89,7 @@ places.ForEach((p) =>
 ````
 
 ## ⛺ Test
-TTD comprehensive test coverage.
+TTD comprehensive test coverage. See the test case documentation in  the WestMacsAppCore.Tests project.
 
 `dotnet test`
 
