@@ -2,7 +2,7 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:38:55 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-04 11:16:10
+ * @Last Modified time: 2020-10-04 11:27:02
  */
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -36,6 +36,10 @@ public class Facility
     [JsonPropertyName("facility-observations")]
     public List<Observation> Observations { get => _observations; set => _observations = value; }
 
+    /// <summary>
+    /// Return a deep copy of the current representation.
+    /// </summary>
+    /// <returns>Facility</returns>
     public object Clone(){
         return new Facility{
             Name = this.Name,

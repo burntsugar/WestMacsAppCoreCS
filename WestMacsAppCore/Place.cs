@@ -2,11 +2,17 @@
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:19 
  * @Last Modified by: rrr@burntsugar.rocks
- * @Last Modified time: 2020-10-03 14:59:53
+ * @Last Modified time: 2020-10-04 11:25:45
  */
 using System.Collections.Generic;
 using System;
 
+/// <summary>
+/// Interface for all Place types in the model.
+/// Implements IComparable T, ICloneable.
+/// Place instances are comparable by distance from east.
+/// Places allow for deep copy cloning.
+/// </summary>
 public interface Place : IComparable<Place>, ICloneable
 {
 

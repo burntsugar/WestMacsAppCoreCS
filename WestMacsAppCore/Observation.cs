@@ -22,6 +22,10 @@ public class Observation
     [JsonPropertyName("log_date")]
     public DateTime LogDate { get => _logDate; set => _logDate = value; }
 
+    /// <summary>
+    /// Return a deep copy of the current representation.
+    /// </summary>
+    /// <returns>Observation</returns>
     public object Clone(){
         return new Observation {
             AuthorName = this.AuthorName,
