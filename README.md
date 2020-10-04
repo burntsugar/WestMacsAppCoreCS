@@ -44,7 +44,7 @@ WestMacsApp
  |
  +-- WestMacsAppCore/
  |
- +-- WestMacsApp.Test/
+ +-- WestMacsAppCore.Test/
  ````
 
 ## ⛺ Run the demo
