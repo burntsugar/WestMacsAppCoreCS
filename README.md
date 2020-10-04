@@ -23,6 +23,10 @@ One of my main hopes for this app is to provide a way for hikers to report the c
 
 ⚠️ I have **excluded** data modification or persistance from this iteration. All lists returned by the controller are **deep copies**.
 
+## ⛺ Prerequisites
+
+- [.NET Core 3.1](https://dotnet.microsoft.com/download)
+
 ## ⛺ Install
 
 `git clone https://github.com/burntsugar/WestMacsAppCoreCS.git`
