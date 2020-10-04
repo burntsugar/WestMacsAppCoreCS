@@ -25,7 +25,7 @@ One of my main hopes for this app is to provide a way for hikers to report the c
 
 ## ⛺ Install
 
-`git clone`
+`git clone https://github.com/burntsugar/WestMacsAppCoreCS.git`
 
 ## ⛺ Repo structure
 
