@@ -69,7 +69,7 @@ WestMacsApp
 ## ⛺ Run the demo
 A handful of features can be seen running in the demo.
 
-`dotnet run --project WestMacsApp`
+`dotnet run --project WestMacsAppCore`
 
 ## 🌟 Add your own custom queries
 Using inline anonymous functions, you can pass your own predicates to query Place(s) in the model.
