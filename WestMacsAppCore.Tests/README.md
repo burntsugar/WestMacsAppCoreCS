@@ -62,10 +62,7 @@ Aims to test the reliability, completeness and sorting of lists created via dese
 | 3   | Get_TrailSite_By_Name_ Return_Null                                                              | "does not exist"            | null                         | pass   |
 | 4   | Get_TrailSite_Instances_By_Distance_East_ Return_TrailSite_Instances_By_Distance_East           | 140                         | List of 1 TrailSite instance | pass   |
 | 5   | Get_All_TrailSite_Instances_With_Water_Tank_ Return_All_TrailSite_Instances_With_Water_Tank     |                             | List of 1 TrailSite          | pass   |
-| 7   |                                                                                                 |                             |                              |        |
-| 8   |                                                                                                 |                             |                              |        |
-| 9   |                                                                                                 |                             |                              |        |
-| 10  |                                                                                                 |                             |                              |        |
+
 
 <br>
 
