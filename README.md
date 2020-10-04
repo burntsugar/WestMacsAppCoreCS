@@ -52,6 +52,23 @@ A handful of features can be seen running in the demo.
 
 `dotnet run --project WestMacsApp`
 
+## Add your own custom queries
+Using inline anonymous functions, you can pass your own predicates to query Place(s) in the model.
+
+As shown in **DemoView.cs**, the function returns a predicate for Place(s) with ground elevation greater than 1000 meters. The predicate is then passed to the controller.
+
+````cs
+    Predicate<Place> q = ((p) =>
+        {
+            return p.Elevation > 1000;
+        });
+    List<Place> places = _controller.customQuery(q);
+    places.ForEach((p) =>
+    {
+        printDemoLines($"{p.Elevation} MTR: {p.ToString()}");
+    });
+````
+
 ## ⛺ Test
 TTD comprehensive test coverage.
 
