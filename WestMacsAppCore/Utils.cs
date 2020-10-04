@@ -1,11 +1,14 @@
 /*
  * @Author: rrr@burntsugar.rocks 
  * @Date: 2020-10-02 19:39:35 
- * @Last Modified by:   rrr@burntsugar.rocks 
- * @Last Modified time: 2020-10-02 19:39:35 
+ * @Last Modified by: rrr@burntsugar.rocks
+ * @Last Modified time: 2020-10-04 14:48:47
  */
 using System;
 
+/// <summary>
+/// Preliminary work on validation library.
+/// </summary>
 public class Utils
 {
 
