@@ -58,15 +58,15 @@ Using inline anonymous functions, you can pass your own predicates to query Plac
 As shown in **DemoView.cs**, the function returns a predicate for Place(s) with ground elevation greater than 1000 meters. The predicate is then passed to the controller.
 
 ````cs
-    Predicate<Place> q = ((p) =>
-        {
-            return p.Elevation > 1000;
-        });
-    List<Place> places = _controller.customQuery(q);
-    places.ForEach((p) =>
+Predicate<Place> q = ((p) =>
     {
-        printDemoLines($"{p.Elevation} MTR: {p.ToString()}");
+        return p.Elevation > 1000;
     });
+List<Place> places = _controller.customQuery(q);
+places.ForEach((p) =>
+{
+    printDemoLines($"{p.Elevation} MTR: {p.ToString()}");
+});
 ````
 
 ## ⛺ Test
