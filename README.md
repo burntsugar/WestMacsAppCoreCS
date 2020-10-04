@@ -23,6 +23,10 @@ One of my main hopes for this app is to provide a way for hikers to report the c
 
 ⚠️ I have **excluded** data modification or persistance from this iteration. All lists returned by the controller are **deep copies**.
 
+## ⛺ Current class diagram
+
+![Current class diagram](class-diagram.png)
+
 ## ⛺ Prerequisites
 
 - [.NET Core 3.1](https://dotnet.microsoft.com/download)
@@ -56,16 +60,16 @@ TTD comprehensive test coverage.
 ## 💧 Water
 View sorted lists of places which contain water. Lists are sorted from **east to west**.
 
-- `GetPlacesWithWaterSource() -> List<Place>`
-- `GetPlacesWithTankWater() -> List<Place>`
-- `GetCampSitesWithWaterSource() -> List<CampSite>`
-- `GetCampSitesWithTankWater() -> List<CampSite>`
-- `GetCampSitesWithTapWater() -> List<CampSite>`
-- `GetTrailSitesWithWaterSource() -> List<PlTrailSiteace>`
-- `GetTrailSitesWithTankWater() -> List<TrailSite>`
+- `GetPlacesWithWaterSource() -> List<Place>: all places having some kind of water source.`
+- `GetPlacesWithTankWater() -> List<Place>: all places having tank water.`
+- `GetCampSitesWithWaterSource() -> List<CampSite>: all camp sites having some kind of water source.`
+- `GetCampSitesWithTankWater() -> List<CampSite>: all camp sites having tank water.`
+- `GetCampSitesWithTapWater() -> List<CampSite>: all camp sites having tap water.`
+- `GetTrailSitesWithWaterSource() -> List<PlTrailSiteace>: all trail sites having some kind of water source.`
+- `GetTrailSitesWithTankWater() -> List<TrailSite>: all trail sites having tank water.`
 
 ## ⛺ About the data
-This build relies upon a .json data file which has been compiled from my initial databases. It represents a portion of the collection.
+This build relies upon a .json data file which has been compiled from my initial databases. It represents a *portion* of the collection.
 
 ## ⛺ API documentation
 XML documentation is built with the project and I am hoping to implement [DocFX](https://dotnet.github.io/docfx/) once it becomes mature enough to manage with .NET Core on MacOS (currently problematic 👿).
