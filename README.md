@@ -29,6 +29,20 @@ One of my main hopes for this app is to provide a way for hikers to report the c
 
 ![Current class diagram](class-diagram.png)
 
+## ⛺ Query design of the model
+
+The public interface of the Model allows the following `Predicate<T>` types to be passed in when querying the model:
+
+- `Predicate<Place>`
+- `Predicate<CampSite>`
+- `Predicate<TrailSite>`
+
+This allows the **Model** to remain relatively uncluttered and flexible, whilst I work on the required functionality in the Controller.
+
+The **AppDelegates** class is a repository for some pre-made predicates which are called at will by the Controller.
+
+Additionally, the Controller exposes a method which allows the view to pass in a custom predicate - for cases where a specific and otherwise unavailable result set is required (see below).
+
 ## ⛺ Prerequisites
 
 - [.NET Core 3.1](https://dotnet.microsoft.com/download)
